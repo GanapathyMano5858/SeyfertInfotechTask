@@ -44,15 +44,13 @@ body {
   transition: all 0.2s ease;
   border-radius: 50px;
   border: none;
+  font-size: 14px;
   color: var(--whiteColor);
   overflow: hidden;
   background: var(--secondaryColor);
   cursor: pointer;
 }
 
-.width260 {
-  width: 260px;
-}
 
 .primaryBtn:before {
   content: "";
@@ -71,7 +69,7 @@ body {
 .primaryBtn span {
   position: relative;
   font-family: "Ubuntu", sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--whiteColor);
@@ -94,7 +92,7 @@ body {
 }
 
 .primaryBtn:hover:before {
-  width: 120%;
+  width: 130%;
   background: #b1dae7;
 }
 
@@ -113,12 +111,15 @@ body {
 }
 
 .navLink ul {
-  list-style: none; /* Remove default bullets */
+  list-style: none;
+  /* Remove default bullets */
   padding: 0;
   z-index: 2;
   margin: 0;
-  display: flex; /* Arrange items horizontally */
-  gap: 20px; /* Space between list items */
+  display: flex;
+  /* Arrange items horizontally */
+  gap: 20px;
+  /* Space between list items */
 }
 
 .navLink ul li {
@@ -127,10 +128,9 @@ body {
 
 .navLink ul li a {
   text-decoration: none;
-  color: var(
-    --primaryColor,
-    #0e384c
-  ); /* Default color if CSS variable is missing */
+  color: var(--primaryColor,
+      #0e384c);
+  /* Default color if CSS variable is missing */
   font-size: 18px;
   font-weight: bold;
   padding: 10px 15px;
@@ -138,8 +138,10 @@ body {
 }
 
 .navLink ul li a:hover {
-  color: var(--secondaryColor); /* Change color on hover */
-  transform: scale(1.1); /* Slightly increase size on hover */
+  color: var(--secondaryColor);
+  /* Change color on hover */
+  transform: scale(1.1);
+  /* Slightly increase size on hover */
 }
 
 /* Add an underline effect */
@@ -172,7 +174,7 @@ body {
 }
 
 .mainContantText {
-  font-size: 54px;
+  font-size: 44px;
   font-weight: 700;
   margin: 0;
   color: var(--primaryColor);
@@ -181,23 +183,23 @@ body {
 .mainContantText span {
   color: var(--secondaryColor);
 }
+
 .mainSubContantText {
   font-size: 16px;
   font-weight: 400;
-  margin-top: 20px;
+  margin: 20px 0;
   text-align: justify;
   width: 90%;
   color: var(--textColor);
 }
 
 .mainContantGoogleRating {
-  display: inline-block;
   text-transform: capitalize;
   color: var(--primaryColor);
-  margin: 0;
   font-size: 16px;
   font-weight: 400;
 }
+
 .mainContantGoogleRating span {
   color: #ffa800;
 }
@@ -209,14 +211,17 @@ body {
   text-align: center;
   padding: 20px;
 }
+
 .appointmentForm {
   text-align: center;
 }
+
 .appointmentFormTitle h2 {
   font-size: 36px;
   color: var(--primaryColor);
   font-weight: 700;
 }
+
 .appointmentFormTitle h2 span {
   color: var(--secondaryColor);
 }
@@ -232,7 +237,8 @@ body {
 
 .formInputBoxDiv .input-icon {
   position: absolute;
-  right: 10px; /* Adjust as needed */
+  right: 10px;
+  /* Adjust as needed */
   top: 50%;
   transform: translateY(-50%);
   font-size: 18px;
@@ -249,7 +255,7 @@ body {
   border: 1.5px solid var(--textColor);
 }
 
-.formInputBox:focus + .input-icon {
+.formInputBox:focus+.input-icon {
   color: var(--secondaryColor);
 }
 
@@ -263,10 +269,8 @@ body {
 }
 
 .custom-select {
-  appearance: none; /* Removes default dropdown arrow */
-  -webkit-appearance: none; /* For Safari */
-  -moz-appearance: none; /* For Firefox */
-  background: transparent; /* Ensures no default background */
+  appearance: none;
+  background: transparent;
   cursor: pointer;
 }
 
@@ -284,27 +288,238 @@ body {
   align-items: center;
   justify-content: center;
 }
-.dentalServices .col-lg-4:first-child .dentalServicesCard {
-  border-right: 1px solid #80808080;
-}
 
 .dentalServicesCard div h3 {
   font-size: 20px;
   font-weight: 700;
 }
+
 .dentalServicesCard div p {
   font-size: 16px;
 }
 
 .aboutUs {
   padding: 100px 0;
+  background-color: var(--whiteColor);
 }
 
 .aboutUsImage {
   position: relative;
 }
 
-.aboutUsImage figure img{
+.aboutUsImage figure img:first-child {
+  width: 450px;
+  z-index: 1;
+  margin-bottom: 100px;
+}
+
+.aboutUsImage figure img:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 80px;
+  z-index: 2;
+  left: 55%;
+  animation: rotateAnimation 20s linear infinite;
+}
+
+.aboutUsImage figure img:nth-child(3) {
+  position: absolute;
+  background-position: center center;
+  background-size: auto;
+  width: 500px;
+}
+
+.aboutUsImage figure img:last-child {
+  position: absolute;
+  bottom: 0%;
+  left: 70%;
+  z-index: 2;
+  width: 300px;
+  border: 5px solid var(--whiteColor);
+  transform: translateX(-50%);
+}
+
+.aboutUsImage figure {
+  display: flex;
+  align-items: center;
+}
+
+.aboutUsImage figure img {
   object-fit: cover;
   border-radius: 30px;
+  width: 100%;
+}
+
+.titleText {
+  font-size: 16px;
+  padding-left: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+  color: var(--secondaryColor);
+}
+
+.titleText::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: url(https://demo.awaikenthemes.com/html-preview/dentaire/images/icon-sub-heading.svg) no-repeat;
+  background-position: left center;
+  background-size: cover;
+  width: 12px;
+  height: 12px;
+}
+
+.aboutUsContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.aboutUsContent ul li {
+  position: relative;
+  font-weight: 600;
+  color: var(--primaryColor);
+  text-transform: capitalize;
+  padding-left: 30px;
+}
+
+.aboutUsContent ul li:before {
+  content: '\f058';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--secondaryColor);
+  display: inline-block;
+  line-height: normal;
+  position: absolute;
+  top: 3px;
+  left: 0;
+}
+
+
+.ourService {
+  padding: 100px 0;
+}
+
+.ourServiceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ourServiceContainer h3 {
+  width: fit-content;
+}
+
+.ourServiceItem {
+  background-color: var(--whiteColor);
+  box-shadow: 0px 4px 40px 0px #0000000F;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  padding: 30px;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
+
+
+
+.ourServiceItem::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  background-color: var(--primaryColor);
+  border-radius: 0px;
+  transition: all 0.5s ease;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.ourServiceItem:hover::before {
+  top: 0;
+}
+
+.ourServiceItem:hover h3,
+.ourServiceItem:hover p,
+.ourServiceItem:hover a {
+  color: var(--whiteColor) !important;
+}
+
+.ourServiceItem h3 {
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: capitalize;
+  margin: 20px 0;
+}
+
+.ourServiceItem h3,
+.ourServiceItem p,
+.ourServiceItem img {
+  z-index: 5;
+  position: relative;
+}
+
+.ourServiceItem img {
+  display: block;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 50px;
+}
+
+.ourServiceItem:hover img {
+  background-color: white;
+}
+
+.ourServiceItem a {
+  position: relative;
+  display: inline-block;
+  color: var(--primaryColor);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-right: 35px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+.ourServiceItem a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(https://demo.awaikenthemes.com/html-preview/dentaire/images/arrow-white.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 10px auto;
+  background-color: var(--secondaryColor);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  transition: 0.4s ease-in-out;
+}
+
+.ourServiceItem a:hover::after {
+  transform: rotate(40deg);
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
