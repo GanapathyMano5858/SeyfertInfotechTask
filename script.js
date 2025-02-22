@@ -49,3 +49,12 @@ selectBox.addEventListener(
 selectBox.addEventListener("change", () => {
   icon.style.transform = "rotate(0deg)";
 });
+
+// FlatPicker DatePicker
+document.addEventListener("DOMContentLoaded", function () {
+  flatpickr("#datePicker", {
+    dateFormat: "d-M-Y",
+    minDate: "today",
+    allowInput: true,
+  });
+});

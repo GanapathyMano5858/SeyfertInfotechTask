@@ -42,8 +42,11 @@ body {
   position: relative;
   padding: 12px 18px;
   transition: all 0.2s ease;
+  border-radius: 50px;
   border: none;
-  background: none;
+  color: var(--whiteColor);
+  overflow: hidden;
+  background: var(--secondaryColor);
   cursor: pointer;
 }
 
@@ -55,13 +58,14 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: -52px;
   display: block;
   border-radius: 50px;
+  user-select: none;
   background: #b1dae7;
   width: 51px;
-  height: 51px;
-  transition: all 0.3s ease;
+  height: 53px;
+  transition: all 0.5s ease;
 }
 
 .primaryBtn span {
@@ -70,30 +74,34 @@ body {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #234567;
+  color: var(--whiteColor);
 }
 
 .primaryBtn svg {
   position: relative;
   top: 0;
+  width: 25px;
+  height: 25px;
+  padding: 6px;
   margin: 0 0 3px 10px;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke: #234567;
+  stroke: var(--whiteColor);
   stroke-width: 2;
   transform: translateX(-5px);
   transition: all 0.3s ease;
 }
 
 .primaryBtn:hover:before {
-  width: 100%;
+  width: 120%;
   background: #b1dae7;
 }
 
 .primaryBtn:hover svg {
   transform: translateX(0);
   padding: 6px;
+  stroke: var(--primaryColor);
   border-radius: 50px;
   background-color: var(--whiteColor);
   width: 25px;
@@ -200,7 +208,6 @@ body {
   border-radius: 30px;
   text-align: center;
   padding: 20px;
-  margin-left: 100px;
 }
 .appointmentForm {
   text-align: center;
@@ -263,7 +270,41 @@ body {
   cursor: pointer;
 }
 
-
 /* .formInputBoxDiv:focus-within .arrowIcon {
   transform: rotate(180deg);
 } */
+
+.dentalServices {
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+}
+
+.dentalServicesCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dentalServices .col-lg-4:first-child .dentalServicesCard {
+  border-right: 1px solid #80808080;
+}
+
+.dentalServicesCard div h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.dentalServicesCard div p {
+  font-size: 16px;
+}
+
+.aboutUs {
+  padding: 100px 0;
+}
+
+.aboutUsImage {
+  position: relative;
+}
+
+.aboutUsImage figure img{
+  object-fit: cover;
+  border-radius: 30px;
+}
