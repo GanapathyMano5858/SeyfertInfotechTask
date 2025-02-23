@@ -27,6 +27,7 @@ var swiper = new Swiper(".mySwiper", {
 // Swiper JS End
 // Main Contant Text Animation End
 
+
 // Footer Start
 const linkItems = document.querySelectorAll(".link-item");
 const indicator = document.querySelector(".indicator");

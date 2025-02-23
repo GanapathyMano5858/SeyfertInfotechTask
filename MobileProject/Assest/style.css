@@ -175,7 +175,7 @@ body {
     color: gray;
 }
 
-.subjectList ul li div {
+.iconCard {
     width: 65px;
     height: 65px;
     font-size: 26px;
@@ -185,36 +185,31 @@ body {
     align-items: center;
 }
 
-.subjectList ul li p {
+.iconCard p {
     margin: 10px 0 0;
     text-align: center;
     font-size: 14px;
     font-weight: 500;
 }
 
-.subjectList ul {
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-}
 
-.subjectList ul li:nth-child(1n) div {
+
+.subjectList div:nth-child(1n) .iconCard {
     color: var(--primaryColor);
     background-color: #ffd3d4;
 }
 
-.subjectList ul li:nth-child(2n) div {
+.subjectList div:nth-child(2n) .iconCard {
     color: #f8d2a6;
     background-color: #ffeeda;
 }
 
-.subjectList ul li:nth-child(3n) div {
+.subjectList div:nth-child(3n) .iconCard {
     color: #f395b4;
     background-color: #ffe5f2;
 }
 
-.subjectList ul li:nth-child(4n) div {
+.subjectList div:nth-child(4n) .iconCard {
     color: #fc999d;
     background-color: #fdcfcf;
 }
@@ -228,7 +223,75 @@ body {
     padding: 0;
 }
 
+.videoRating {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.videoRating span {
+    color: gold;
+}
+
+.videoTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.articleName {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 7.5px;
+}
+
+.liveNowBtn {
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--whiteColor);
+    padding: 5px 15px;
+    border-radius: 15px;
+    background-color: var(--primaryColor);
+}
+
 /* Video End */
+
+/* Profile Start */
+.profileImg {
+    border: 3px dashed var(--primaryColor);
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    border-radius: 150px;
+}
+
+.profileImg .editIcon {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    color: var(--whiteColor);
+    background-color: var(--secondaryColor);
+    top: 80%;
+    font-size: 20px;
+    right: 10%;
+}
+
+.inputBox {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    max-height: 150px;
+    outline: none;
+}
+
+/* Profile End */
 
 
 
@@ -309,7 +372,7 @@ footer {
     border: 6px solid var(--whiteColor);
     border-radius: 50%;
     transform: translateX(-50%);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .indicator::before,
