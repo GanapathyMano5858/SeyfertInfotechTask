@@ -1,0 +1,634 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --primaryColor: #0e384c;
+  --secondaryColor: #1e84b5;
+  --backgroundColor: #eff8ff;
+  --textColor: #527282;
+  --whiteColor: #ffffff;
+  --blackColor: #000;
+  --errorColor: #e65757;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--backgroundColor);
+  font-family: "Inter", serif;
+}
+
+.cursor-ball {
+  width: 15px;
+  height: 15px;
+  background-color: var(--secondaryColor);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out,
+    background-color 0.2s ease-out;
+}
+
+.letter {
+  transition: color 0.2s ease;
+}
+
+.topBottomPadding {
+  padding: 100px 0;
+}
+
+
+.primaryBtn {
+  position: relative;
+  padding: 8px 18px;
+  transition: all 0.2s ease;
+  border-radius: 50px;
+  border: none;
+  font-size: 14px;
+  color: var(--whiteColor);
+  overflow: hidden;
+  background: var(--secondaryColor);
+  cursor: pointer;
+}
+
+
+.primaryBtn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -52px;
+  display: block;
+  border-radius: 50px;
+  user-select: none;
+  background: #b1dae7;
+  width: 51px;
+  height: 53px;
+  transition: all 0.5s ease;
+}
+
+.primaryBtn span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--whiteColor);
+}
+
+.primaryBtn svg {
+  position: relative;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  padding: 6px;
+  margin: 0 0 3px 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: var(--whiteColor);
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover:before {
+  width: 130%;
+  background: #b1dae7;
+}
+
+.primaryBtn:hover svg {
+  transform: translateX(0);
+  padding: 6px;
+  stroke: var(--primaryColor);
+  border-radius: 50px;
+  background-color: var(--whiteColor);
+  width: 25px;
+  height: 25px;
+}
+
+.primaryBtn:active {
+  transform: scale(0.95);
+}
+
+.navLink ul {
+  list-style: none;
+  /* Remove default bullets */
+  padding: 0;
+  z-index: 2;
+  margin: 0;
+  display: flex;
+  /* Arrange items horizontally */
+  gap: 20px;
+  /* Space between list items */
+}
+
+.navLink ul li {
+  position: relative;
+}
+
+.navLink ul li a {
+  text-decoration: none;
+  color: var(--primaryColor,
+      #0e384c);
+  /* Default color if CSS variable is missing */
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navLink ul li a:hover {
+  color: var(--secondaryColor);
+  /* Change color on hover */
+  transform: scale(1.1);
+  /* Slightly increase size on hover */
+}
+
+/* Add an underline effect */
+.navLink ul li::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primaryColor);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navLink ul li:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar-toggler {
+  border: none;
+  border-radius: 5px;
+  padding: 7.5px 10px;
+  color: var(--whiteColor);
+  background-color: var(--secondaryColor);
+}
+
+
+
+.navbar {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+  background-color: rgba(168, 168, 168, 0.63);
+  /* Change background color */
+  backdrop-filter: blur(10px);
+  /* Optional: Blur effect */
+  padding: 10px 0;
+  /* Reduce padding */
+}
+
+.navbar .navbar-brand img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar.scrolled .navbar-brand img {
+  transform: scale(0.9);
+  /* Slightly reduce logo size */
+}
+
+
+.mainContantText {
+  font-size: 44px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--primaryColor);
+}
+
+.mainContantText span {
+  color: var(--secondaryColor);
+}
+
+.mainSubContantText {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 20px 0;
+  text-align: justify;
+  width: 90%;
+  color: var(--textColor);
+}
+
+.mainContantGoogleRating {
+  text-transform: capitalize;
+  color: var(--primaryColor);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.mainContantGoogleRating span {
+  color: #ffa800;
+}
+
+.appointmentForm {
+  box-shadow: 0px 4px 40px 0px #0000000f;
+  border: 1px solid lightgray;
+  border-radius: 30px;
+  text-align: center;
+  padding: 20px;
+}
+
+.appointmentForm {
+  text-align: center;
+}
+
+.appointmentFormTitle h2 {
+  font-size: 36px;
+  color: var(--primaryColor);
+  font-weight: 700;
+}
+
+.appointmentFormTitle h2 span {
+  color: var(--secondaryColor);
+}
+
+.appointmentFormTitle h2 p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.formInputBoxDiv {
+  position: relative;
+}
+
+.formInputBoxDiv .input-icon {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #666;
+}
+
+.formInputBox {
+  border-radius: 5px;
+  padding: 10px 30px 10px 15px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  font-size: 16px;
+  background-color: transparent;
+  outline: none;
+  border: 1.5px solid var(--textColor);
+}
+
+.formInputBox:focus+.input-icon {
+  color: var(--secondaryColor);
+}
+
+.arrowIcon {
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  color: #666;
+  transition: transform 0.3s ease;
+  margin-top: 11px;
+}
+
+.custom-select {
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* .formInputBoxDiv:focus-within .arrowIcon {
+  transform: rotate(180deg);
+} */
+
+.dentalServices {
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+}
+
+.dentalServicesCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dentalServicesCard div h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.dentalServicesCard div p {
+  font-size: 16px;
+}
+
+.aboutUs {
+  background-color: var(--whiteColor);
+}
+
+.aboutUsImage {
+  position: relative;
+}
+
+.aboutUsImage figure img:first-child {
+  width: 450px;
+  z-index: 1;
+  margin-bottom: 100px;
+}
+
+.aboutUsImage figure img:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 80px;
+  z-index: 2;
+  left: 55%;
+  animation: rotateAnimation 20s linear infinite;
+}
+
+.aboutUsImage figure img:nth-child(3) {
+  position: absolute;
+  background-position: center center;
+  background-size: auto;
+  width: 500px;
+}
+
+.aboutUsImage figure img:last-child {
+  position: absolute;
+  bottom: 0%;
+  left: 70%;
+  z-index: 2;
+  width: 300px;
+  border: 5px solid var(--whiteColor);
+  transform: translateX(-50%);
+}
+
+.aboutUsImage figure {
+  display: flex;
+  align-items: center;
+}
+
+.aboutUsImage figure img {
+  object-fit: cover;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.titleText {
+  font-size: 16px;
+  padding-left: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+  color: var(--secondaryColor);
+}
+
+.titleText::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: url(https://demo.awaikenthemes.com/html-preview/dentaire/images/icon-sub-heading.svg) no-repeat;
+  background-position: left center;
+  background-size: cover;
+  width: 12px;
+  height: 12px;
+}
+
+.aboutUsContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.aboutUsContent ul li {
+  position: relative;
+  font-weight: 600;
+  color: var(--primaryColor);
+  text-transform: capitalize;
+  padding-left: 30px;
+  width: calc(50% - 10px);
+}
+
+.aboutUsContent ul li:before {
+  content: '\f058';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--secondaryColor);
+  display: inline-block;
+  line-height: normal;
+  position: absolute;
+  top: 3px;
+  left: 0;
+}
+
+.ourServiceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ourServiceContainer h3 {
+  width: fit-content;
+}
+
+.ourServiceItem {
+  background-color: var(--whiteColor);
+  box-shadow: 0px 4px 40px 0px #0000000F;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  padding: 30px;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
+
+
+
+.ourServiceItem::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  background-color: var(--primaryColor);
+  border-radius: 0px;
+  transition: all 0.5s ease;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.ourServiceItem:hover::before {
+  top: 0;
+}
+
+.ourServiceItem:hover h3,
+.ourServiceItem:hover p,
+.ourServiceItem:hover a {
+  color: var(--whiteColor) !important;
+}
+
+.ourServiceItem h3 {
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: capitalize;
+  margin: 20px 0;
+}
+
+.ourServiceItem h3,
+.ourServiceItem p,
+.ourServiceItem img {
+  z-index: 5;
+  position: relative;
+}
+
+.ourServiceItem img {
+  display: block;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 50px;
+}
+
+.ourServiceItem:hover img {
+  background-color: white;
+}
+
+.ourServiceItem a {
+  position: relative;
+  display: inline-block;
+  color: var(--primaryColor);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-right: 35px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+}
+
+.ourServiceItem a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(https://demo.awaikenthemes.com/html-preview/dentaire/images/arrow-white.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 10px auto;
+  background-color: var(--secondaryColor);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  transition: 0.4s ease-in-out;
+}
+
+.ourServiceItem a:hover::after {
+  transform: rotate(40deg);
+}
+
+.contantNow {
+  background-color: var(--whiteColor);
+}
+
+.contantNowMap {
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  filter: grayscale(100%);
+  transition: filter 0.2s ease-in-out;
+}
+
+iframe:hover {
+  filter: grayscale(0%);
+}
+
+.contantNowDetails li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.contantNowDetails li img {
+  width: 20px;
+}
+
+.contantNowDetails li p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer {
+  background-color: var(--primaryColor);
+}
+
+.footerContant figure {
+  width: 150px;
+}
+
+.footerContant p {
+  color: var(--whiteColor);
+  font-size: 16px;
+  text-align: justify;
+}
+
+.footer h3 {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--whiteColor);
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--whiteColor);
+  list-style: none;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--whiteColor);
+}
+
+.footer hr {
+  color: lightgray;
+
+}
+
+.footerCopyReserved {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+  color: var(--whiteColor);
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
