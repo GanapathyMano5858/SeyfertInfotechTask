@@ -76,17 +76,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  const navbar = document.querySelector(".navbar");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const navbar = document.querySelector(".navbar");
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
-});
+//   window.addEventListener("scroll", function () {
+//     if (window.scrollY > 50) {
+//       navbar.classList.add("scrolled");
+//     } else {
+//       navbar.classList.remove("scrolled");
+//     }
+//   });
+// });
 
 
 // Email sending EmailJS Code Start
